@@ -1,0 +1,9 @@
+[
+  {
+    "question_id": "vq_sample_1",
+    "question_text": "Örnek: Head-On oyuncusu Adam Bousdoukos (Q72883) için instance-of?",
+    "reasoning_path": "Q325648 → P161 → Q72883 → P31 → Q5",
+    "gold_answer": "Q5 (human)",
+    "difficulty": "2-hop"
+  }
+]
