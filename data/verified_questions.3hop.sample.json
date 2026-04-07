@@ -1,0 +1,28 @@
+[
+  {
+    "question_id": "tr_3hop_sample_001",
+    "domain": "Turkiye_Cinema",
+    "question_type": "3-hop",
+    "question_text": "What is the capital city of the country of citizenship of a cast member of Head-On?",
+    "seed_entity_qid": "Q325648",
+    "seed_entity_label": "Head-On",
+    "reasoning_path": "Q325648 -> P161 -> Q72883 -> P27 -> Q183 -> P36 -> Q64",
+    "path_schema": [
+      "P161",
+      "P27",
+      "P36"
+    ],
+    "path_schema_human": [
+      "cast member",
+      "country of citizenship",
+      "capital"
+    ],
+    "gold_answer_qid": "Q64",
+    "gold_answer_text": "Berlin",
+    "verification_cypher": "MATCH (film {qid:'Q325648'})-[:P161]->(person)-[:P27]->(country)-[:P36]->(capital {qid:'Q64'}) RETURN film.name AS film, person.name AS person, country.name AS country, capital.name AS capital LIMIT 5",
+    "verification_rule": "Verified when Cypher returns at least one row.",
+    "is_verified": false,
+    "verification_status": "pending_local_neo4j_execution"
+  }
+]
+
