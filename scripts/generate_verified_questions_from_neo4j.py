@@ -30,6 +30,7 @@ REL_TO_DOMAIN: dict[str, str] = {
     "P355": "company",
     "P175": "music",
     "P264": "music",
+    "P136": "music",
     "P69": "academia",
     "P108": "academia",
     "P101": "academia",
@@ -37,11 +38,25 @@ REL_TO_DOMAIN: dict[str, str] = {
     "P27": "geo",
     "P19": "geo",
     "P131": "geo",
-    "P31": "typing",
 }
 
 TURKEY_ANCHOR_RELATIONS = ("P17", "P27", "P131", "P495", "P159", "P19")
-ALLOWED_RELATIONS = set(REL_TO_DOMAIN.keys()) | {"P527"}
+ALLOWED_RELATIONS = {
+    "P54",   # member of sports team
+    "P286",  # head coach
+    "P115",  # home venue
+    "P57",   # director
+    "P161",  # cast member
+    "P166",  # award received
+    "P495",  # country of origin
+    "P175",  # performer
+    "P264",  # record label
+    "P136",  # genre
+    "P17",   # country
+    "P27",   # country of citizenship
+    "P19",   # place of birth
+    "P131",  # located in administrative territorial entity
+}
 FIRST_HOP_RELATIONS = {
     "P54",
     "P57",
@@ -58,6 +73,11 @@ FIRST_HOP_RELATIONS = {
     "P131",
 }
 DOMAIN_START_RELATIONS = {"P54", "P57", "P161", "P112", "P175", "P69", "P108", "P159", "P495"}
+DOMAIN_RELATIONS: dict[str, set[str]] = {
+    "cinema": {"P57", "P161", "P495", "P166"},
+    "football": {"P54", "P286", "P115"},
+    "music": {"P175", "P264", "P136"},
+}
 
 
 @dataclass
@@ -124,7 +144,12 @@ def infer_domain(*relations: str) -> str:
     return "mixed"
 
 
-def get_turkiye_seeds(session, turkey_qid: str, max_seeds: int) -> List[str]:
+def get_turkiye_seeds(
+    session,
+    turkey_qid: str,
+    max_seeds: int,
+    start_rels: set[str] | None = None,
+) -> List[str]:
     query = """
     MATCH (e:Entity)-[r]->(t:Entity {entityId: $turkey_qid})
     WHERE type(r) IN $anchor_rels
@@ -147,7 +172,7 @@ def get_turkiye_seeds(session, turkey_qid: str, max_seeds: int) -> List[str]:
         turkey_qid=turkey_qid,
         max_seeds=max_seeds,
         anchor_rels=list(TURKEY_ANCHOR_RELATIONS),
-        start_rels=list(DOMAIN_START_RELATIONS),
+        start_rels=list(start_rels or DOMAIN_START_RELATIONS),
     )
     return [r["qid"] for r in rows if r.get("qid")]
 
@@ -173,6 +198,7 @@ def generate_2hop_items(
     relation_map: Dict[str, str],
     limit: int,
     turkey_qid: str,
+    first_hop_rels: set[str] | None = None,
 ) -> List[QuestionItem]:
     items: List[QuestionItem] = []
     seen: Set[Tuple[str, str, str, str, str]] = set()
@@ -187,6 +213,21 @@ def generate_2hop_items(
           AND b.entityId <> c.entityId
           AND type(r1) IN $first_hop_rels
           AND type(r2) IN $allowed_rels
+          AND (
+              a.entityId = $turkey_qid OR b.entityId = $turkey_qid OR c.entityId = $turkey_qid
+              OR EXISTS {
+                  MATCH (a)-[ta]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(ta) IN $anchor_rels
+              }
+              OR EXISTS {
+                  MATCH (b)-[tb]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(tb) IN $anchor_rels
+              }
+              OR EXISTS {
+                  MATCH (c)-[tc]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(tc) IN $anchor_rels
+              }
+          )
         RETURN a.entityId AS a_id, a.name AS a_name,
                type(r1) AS r1,
                b.entityId AS b_id, b.name AS b_name,
@@ -197,8 +238,10 @@ def generate_2hop_items(
         for row in session.run(
             query,
             seed=seed,
-            first_hop_rels=list(FIRST_HOP_RELATIONS),
+            first_hop_rels=list(first_hop_rels or FIRST_HOP_RELATIONS),
             allowed_rels=list(ALLOWED_RELATIONS),
+            turkey_qid=turkey_qid,
+            anchor_rels=list(TURKEY_ANCHOR_RELATIONS),
         ):
             if len(items) >= limit:
                 break
@@ -243,6 +286,7 @@ def generate_3hop_items(
     relation_map: Dict[str, str],
     limit: int,
     turkey_qid: str,
+    first_hop_rels: set[str] | None = None,
 ) -> List[QuestionItem]:
     items: List[QuestionItem] = []
     seen: Set[Tuple[str, str, str, str, str, str, str]] = set()
@@ -259,6 +303,25 @@ def generate_3hop_items(
           AND type(r1) IN $first_hop_rels
           AND type(r2) IN $allowed_rels
           AND type(r3) IN $allowed_rels
+          AND (
+              a.entityId = $turkey_qid OR b.entityId = $turkey_qid OR c.entityId = $turkey_qid OR d.entityId = $turkey_qid
+              OR EXISTS {
+                  MATCH (a)-[ta]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(ta) IN $anchor_rels
+              }
+              OR EXISTS {
+                  MATCH (b)-[tb]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(tb) IN $anchor_rels
+              }
+              OR EXISTS {
+                  MATCH (c)-[tc]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(tc) IN $anchor_rels
+              }
+              OR EXISTS {
+                  MATCH (d)-[td]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(td) IN $anchor_rels
+              }
+          )
         RETURN a.entityId AS a_id, a.name AS a_name,
                type(r1) AS r1,
                b.entityId AS b_id, b.name AS b_name,
@@ -271,8 +334,10 @@ def generate_3hop_items(
         for row in session.run(
             query,
             seed=seed,
-            first_hop_rels=list(FIRST_HOP_RELATIONS),
+            first_hop_rels=list(first_hop_rels or FIRST_HOP_RELATIONS),
             allowed_rels=list(ALLOWED_RELATIONS),
+            turkey_qid=turkey_qid,
+            anchor_rels=list(TURKEY_ANCHOR_RELATIONS),
         ):
             if len(items) >= limit:
                 break
@@ -329,6 +394,7 @@ def generate_comparison_items(
     relation_map: Dict[str, str],
     limit: int,
     turkey_qid: str,
+    allowed_rels: set[str] | None = None,
 ) -> List[QuestionItem]:
     items: List[QuestionItem] = []
     seen: Set[Tuple[str, str, str, str]] = set()
@@ -342,13 +408,34 @@ def generate_comparison_items(
         WHERE a.entityId < x.entityId
           AND type(r) = type(r2)
           AND type(r) IN $allowed_rels
+          AND (
+              a.entityId = $turkey_qid OR x.entityId = $turkey_qid OR z.entityId = $turkey_qid
+              OR EXISTS {
+                  MATCH (a)-[ta]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(ta) IN $anchor_rels
+              }
+              OR EXISTS {
+                  MATCH (x)-[tx]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(tx) IN $anchor_rels
+              }
+              OR EXISTS {
+                  MATCH (z)-[tz]->(:Entity {entityId:$turkey_qid})
+                  WHERE type(tz) IN $anchor_rels
+              }
+          )
         RETURN a.entityId AS a_id, a.name AS a_name,
                x.entityId AS x_id, x.name AS x_name,
                z.entityId AS z_id, z.name AS z_name,
                type(r) AS rel
         LIMIT 100
         """
-        for row in session.run(query, seed=seed, allowed_rels=list(ALLOWED_RELATIONS)):
+        for row in session.run(
+            query,
+            seed=seed,
+            allowed_rels=list(allowed_rels or ALLOWED_RELATIONS),
+            turkey_qid=turkey_qid,
+            anchor_rels=list(TURKEY_ANCHOR_RELATIONS),
+        ):
             if len(items) >= limit:
                 break
             key = (row["a_id"], row["x_id"], row["rel"], row["z_id"])
@@ -402,21 +489,110 @@ def main() -> None:
     relation_map = load_relation_map(args.relation_map)
     driver = GraphDatabase.driver(args.uri, auth=(args.user, args.password))
     with driver.session() as session:
-        seeds = get_turkiye_seeds(
+        all_seeds = get_turkiye_seeds(
             session=session,
             turkey_qid=args.turkey_qid,
             max_seeds=args.max_seeds,
         )
-
-        q2 = generate_2hop_items(session, seeds, relation_map, args.n_2hop, args.turkey_qid)
-        q3 = generate_3hop_items(session, seeds, relation_map, args.n_3hop, args.turkey_qid)
-        qcmp = generate_comparison_items(
-            session,
-            seeds,
-            relation_map,
-            args.n_comparison,
-            args.turkey_qid,
+        cinema_seeds = get_turkiye_seeds(
+            session=session,
+            turkey_qid=args.turkey_qid,
+            max_seeds=args.max_seeds,
+            start_rels=DOMAIN_RELATIONS["cinema"],
         )
+        football_seeds = get_turkiye_seeds(
+            session=session,
+            turkey_qid=args.turkey_qid,
+            max_seeds=args.max_seeds,
+            start_rels=DOMAIN_RELATIONS["football"],
+        )
+        music_seeds = get_turkiye_seeds(
+            session=session,
+            turkey_qid=args.turkey_qid,
+            max_seeds=args.max_seeds,
+            start_rels=DOMAIN_RELATIONS["music"],
+        )
+
+        q2 = []
+        q2 += generate_2hop_items(
+            session, cinema_seeds, relation_map, min(10, args.n_2hop), args.turkey_qid, DOMAIN_RELATIONS["cinema"]
+        )
+        q2 += generate_2hop_items(
+            session,
+            football_seeds,
+            relation_map,
+            min(10, max(0, args.n_2hop - len(q2))),
+            args.turkey_qid,
+            DOMAIN_RELATIONS["football"],
+        )
+        q2 += generate_2hop_items(
+            session,
+            music_seeds,
+            relation_map,
+            min(10, max(0, args.n_2hop - len(q2))),
+            args.turkey_qid,
+            DOMAIN_RELATIONS["music"],
+        )
+        if len(q2) < args.n_2hop:
+            q2 += generate_2hop_items(session, all_seeds, relation_map, args.n_2hop - len(q2), args.turkey_qid)
+        q2 = q2[: args.n_2hop]
+
+        q3 = []
+        q3 += generate_3hop_items(
+            session, cinema_seeds, relation_map, min(6, args.n_3hop), args.turkey_qid, DOMAIN_RELATIONS["cinema"]
+        )
+        q3 += generate_3hop_items(
+            session,
+            football_seeds,
+            relation_map,
+            min(6, max(0, args.n_3hop - len(q3))),
+            args.turkey_qid,
+            DOMAIN_RELATIONS["football"],
+        )
+        q3 += generate_3hop_items(
+            session,
+            music_seeds,
+            relation_map,
+            min(3, max(0, args.n_3hop - len(q3))),
+            args.turkey_qid,
+            DOMAIN_RELATIONS["music"],
+        )
+        if len(q3) < args.n_3hop:
+            q3 += generate_3hop_items(session, all_seeds, relation_map, args.n_3hop - len(q3), args.turkey_qid)
+        q3 = q3[: args.n_3hop]
+
+        qcmp = []
+        qcmp += generate_comparison_items(
+            session, cinema_seeds, relation_map, min(2, args.n_comparison), args.turkey_qid, DOMAIN_RELATIONS["cinema"]
+        )
+        qcmp += generate_comparison_items(
+            session,
+            football_seeds,
+            relation_map,
+            min(2, max(0, args.n_comparison - len(qcmp))),
+            args.turkey_qid,
+            DOMAIN_RELATIONS["football"],
+        )
+        qcmp += generate_comparison_items(
+            session,
+            music_seeds,
+            relation_map,
+            min(1, max(0, args.n_comparison - len(qcmp))),
+            args.turkey_qid,
+            DOMAIN_RELATIONS["music"],
+        )
+        if len(qcmp) < args.n_comparison:
+            qcmp += generate_comparison_items(
+                session, all_seeds, relation_map, args.n_comparison - len(qcmp), args.turkey_qid
+            )
+        qcmp = qcmp[: args.n_comparison]
+
+        for idx, item in enumerate(q2, 1):
+            item.question_id = f"TR_2H_{idx:03d}"
+        for idx, item in enumerate(q3, 1):
+            item.question_id = f"TR_3H_{idx:03d}"
+        for idx, item in enumerate(qcmp, 1):
+            item.question_id = f"TR_CMP_{idx:03d}"
 
     driver.close()
 

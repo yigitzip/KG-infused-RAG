@@ -11,16 +11,6 @@
   },
   {
     "question_id": "TR_2H_002",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1151023 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
-    "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1151023'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_2H_003",
     "question_text": "What is the country of citizenship of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P27 -> Q142",
     "gold_answer": "France (Q142)",
@@ -30,17 +20,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_004",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
-    "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1255329'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_2H_005",
+    "question_id": "TR_2H_003",
     "question_text": "What is the place of birth of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P19 -> Q271659",
     "gold_answer": "Gonesse (Q271659)",
@@ -50,7 +30,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_006",
+    "question_id": "TR_2H_004",
     "question_text": "What is the country of citizenship of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q19650463 -> P27 -> Q145",
     "gold_answer": "The United Kingdom of Great Britain and Northern Ireland (Q145)",
@@ -60,17 +40,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_007",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q19650463 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
-    "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q19650463'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_2H_008",
+    "question_id": "TR_2H_005",
     "question_text": "What is the country of citizenship of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P27 -> Q801",
     "gold_answer": "Israel (Q801)",
@@ -80,17 +50,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_009",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
-    "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q284051'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_2H_010",
+    "question_id": "TR_2H_006",
     "question_text": "What is the place of birth of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P19 -> Q1218",
     "gold_answer": "Jerusalem (Q1218)",
@@ -100,27 +60,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_011",
-    "question_text": "What is the educated at of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P69 -> Q174158",
-    "gold_answer": "The Hebrew University of Jerusalem (Q174158)",
-    "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q284051'})-[:P69]->(c:Entity {entityId:'Q174158'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_2H_012",
-    "question_text": "What is the educated at of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P69 -> Q6925843",
-    "gold_answer": "Mountview Academy of Theatre Arts (Q6925843)",
-    "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q284051'})-[:P69]->(c:Entity {entityId:'Q6925843'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_2H_013",
+    "question_id": "TR_2H_007",
     "question_text": "What is the award received of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P166 -> Q616568",
     "gold_answer": "The Israel Prize (Q616568)",
@@ -130,7 +70,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_014",
+    "question_id": "TR_2H_008",
     "question_text": "What is the country of citizenship of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q463514 -> P27 -> Q1028",
     "gold_answer": "Morocco (Q1028)",
@@ -140,7 +80,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_015",
+    "question_id": "TR_2H_009",
     "question_text": "What is the country of citizenship of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q463514 -> P27 -> Q142",
     "gold_answer": "France (Q142)",
@@ -150,17 +90,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_016",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q463514 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
-    "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q463514'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_2H_017",
+    "question_id": "TR_2H_010",
     "question_text": "What is the place of birth of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q463514 -> P19 -> Q595974",
     "gold_answer": "Khouribga (Q595974)",
@@ -170,247 +100,207 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_2H_018",
-    "question_text": "What is the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q463473 -> P27 -> Q145",
-    "gold_answer": "The United Kingdom of Great Britain and Northern Ireland (Q145)",
+    "question_id": "TR_2H_011",
+    "question_text": "What is the country of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P17 -> Q43",
+    "gold_answer": "Turkey (Q43)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q463473'})-[:P27]->(c:Entity {entityId:'Q145'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P17]->(c:Entity {entityId:'Q43'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_2H_012",
+    "question_text": "What is the country of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1369461 -> P17 -> Q43",
+    "gold_answer": "Turkey (Q43)",
+    "difficulty": "2-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1369461'})-[:P17]->(c:Entity {entityId:'Q43'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_2H_013",
+    "question_text": "What is the home venue of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P115 -> Q1325035",
+    "gold_answer": "Elazığ Atatürk Stadium (Q1325035)",
+    "difficulty": "2-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P115]->(c:Entity {entityId:'Q1325035'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_2H_014",
+    "question_text": "What is the head coach of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P286 -> Q782660",
+    "gold_answer": "Yılmaz Vural (Q782660)",
+    "difficulty": "2-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P286]->(c:Entity {entityId:'Q782660'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_2H_015",
+    "question_text": "What is the country of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1253472 -> P17 -> Q229",
+    "gold_answer": "Cyprus (Q229)",
+    "difficulty": "2-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1253472'})-[:P17]->(c:Entity {entityId:'Q229'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_2H_016",
+    "question_text": "What is the home venue of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1253472 -> P115 -> Q3655367",
+    "gold_answer": "Makario Stadium (Q3655367)",
+    "difficulty": "2-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1253472'})-[:P115]->(c:Entity {entityId:'Q3655367'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_2H_017",
+    "question_text": "What is the home venue of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1253472 -> P115 -> Q582868",
+    "gold_answer": "Ammochostos Stadium (Q582868)",
+    "difficulty": "2-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1253472'})-[:P115]->(c:Entity {entityId:'Q582868'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_2H_018",
+    "question_text": "What is the home venue of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1253472 -> P115 -> Q7168854",
+    "gold_answer": "Peristerona Stadium (Q7168854)",
+    "difficulty": "2-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1253472'})-[:P115]->(c:Entity {entityId:'Q7168854'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_019",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q463473 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
+    "question_text": "What is the head coach of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1253472 -> P286 -> Q3205271",
+    "gold_answer": "Loukas Hadjiloukas (Q3205271)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q463473'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1253472'})-[:P286]->(c:Entity {entityId:'Q3205271'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_020",
-    "question_text": "What is the place of birth of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q463473 -> P19 -> Q83387",
-    "gold_answer": "Diyarbakır (Q83387)",
+    "question_text": "What is the home venue of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1369461 -> P115 -> Q937866",
+    "gold_answer": "Sakarya Atatürk Stadium (Q937866)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q463473'})-[:P19]->(c:Entity {entityId:'Q83387'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1369461'})-[:P115]->(c:Entity {entityId:'Q937866'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_021",
-    "question_text": "What is the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q465998 -> P27 -> Q16",
-    "gold_answer": "Canada (Q16)",
+    "question_text": "What is the award received of the genre of Crossing the Bridge?",
+    "reasoning_path": "Q573156 -> P136 -> Q93204 -> P166 -> Q135498",
+    "gold_answer": "The Genesis Awards (Q135498)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q465998'})-[:P27]->(c:Entity {entityId:'Q16'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q573156'})-[:P136]->(b:Entity {entityId:'Q93204'})-[:P166]->(c:Entity {entityId:'Q135498'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_022",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q465998 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
+    "question_text": "What is the country of the record label of Emina Jahović?",
+    "reasoning_path": "Q233932 -> P264 -> Q4384116 -> P17 -> Q403",
+    "gold_answer": "Serbia (Q403)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q465998'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q233932'})-[:P264]->(b:Entity {entityId:'Q4384116'})-[:P17]->(c:Entity {entityId:'Q403'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_023",
-    "question_text": "What is the place of birth of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q465998 -> P19 -> Q3820",
-    "gold_answer": "Beirut (Q3820)",
+    "question_text": "What is the award received of the genre of The Greatest Ears in Town?",
+    "reasoning_path": "Q7738030 -> P136 -> Q93204 -> P166 -> Q135498",
+    "gold_answer": "The Genesis Awards (Q135498)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q465998'})-[:P19]->(c:Entity {entityId:'Q3820'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q7738030'})-[:P136]->(b:Entity {entityId:'Q93204'})-[:P166]->(c:Entity {entityId:'Q135498'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_024",
-    "question_text": "What is the educated at of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q465998 -> P69 -> Q180865",
-    "gold_answer": "The University of Toronto (Q180865)",
+    "question_text": "What is the country of the record label of Ahmet Ertegun?",
+    "reasoning_path": "Q352760 -> P264 -> Q202440 -> P17 -> Q30",
+    "gold_answer": "The United States of America (Q30)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q465998'})-[:P69]->(c:Entity {entityId:'Q180865'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q352760'})-[:P264]->(b:Entity {entityId:'Q202440'})-[:P17]->(c:Entity {entityId:'Q30'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_025",
-    "question_text": "What is the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q4701047 -> P27 -> Q23681",
-    "gold_answer": "Northern Cyprus (Q23681)",
+    "question_text": "What is the genre of the record label of Ahmet Ertegun?",
+    "reasoning_path": "Q352760 -> P264 -> Q202440 -> P136 -> Q8341",
+    "gold_answer": "Jazz (Q8341)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q4701047'})-[:P27]->(c:Entity {entityId:'Q23681'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q352760'})-[:P264]->(b:Entity {entityId:'Q202440'})-[:P136]->(c:Entity {entityId:'Q8341'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_026",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q4701047 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
+    "question_text": "What is the country of the record label of Demir Demirkan?",
+    "reasoning_path": "Q981776 -> P264 -> Q2172834 -> P17 -> Q30",
+    "gold_answer": "The United States of America (Q30)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q4701047'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q981776'})-[:P264]->(b:Entity {entityId:'Q2172834'})-[:P17]->(c:Entity {entityId:'Q30'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_027",
-    "question_text": "What is the place of birth of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q4701047 -> P19 -> Q84",
-    "gold_answer": "London (Q84)",
+    "question_text": "What is the genre of the record label of Demir Demirkan?",
+    "reasoning_path": "Q981776 -> P264 -> Q2172834 -> P136 -> Q8341",
+    "gold_answer": "Jazz (Q8341)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q4701047'})-[:P19]->(c:Entity {entityId:'Q84'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q981776'})-[:P264]->(b:Entity {entityId:'Q2172834'})-[:P136]->(c:Entity {entityId:'Q8341'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_028",
-    "question_text": "What is the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q469983 -> P27 -> Q35",
-    "gold_answer": "Denmark (Q35)",
+    "question_text": "What is the country of the record label of Zeki Müren?",
+    "reasoning_path": "Q187272 -> P264 -> Q1258701 -> P17 -> Q43",
+    "gold_answer": "Turkey (Q43)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q469983'})-[:P27]->(c:Entity {entityId:'Q35'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q187272'})-[:P264]->(b:Entity {entityId:'Q1258701'})-[:P17]->(c:Entity {entityId:'Q43'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_029",
-    "question_text": "What is the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q469983 -> P31 -> Q5",
-    "gold_answer": "Humans (Q5)",
+    "question_text": "What is the country of the record label of Arif Mardin?",
+    "reasoning_path": "Q660545 -> P264 -> Q202440 -> P17 -> Q30",
+    "gold_answer": "The United States of America (Q30)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q469983'})-[:P31]->(c:Entity {entityId:'Q5'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q660545'})-[:P264]->(b:Entity {entityId:'Q202440'})-[:P17]->(c:Entity {entityId:'Q30'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_2H_030",
-    "question_text": "What is the place of birth of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q469983 -> P19 -> Q25331",
-    "gold_answer": "Odense (Q25331)",
+    "question_text": "What is the genre of the record label of Arif Mardin?",
+    "reasoning_path": "Q660545 -> P264 -> Q202440 -> P136 -> Q8341",
+    "gold_answer": "Jazz (Q8341)",
     "difficulty": "2-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q469983'})-[:P19]->(c:Entity {entityId:'Q25331'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q660545'})-[:P264]->(b:Entity {entityId:'Q202440'})-[:P136]->(c:Entity {entityId:'Q8341'}) RETURN a.name AS a, b.name AS b, c.name AS c LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_3H_001",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1151023 -> P27 -> Q43 -> P31 -> Q1323642",
-    "gold_answer": "This (Q1323642)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1151023'})-[:P27]->(c:Entity {entityId:'Q43'})-[:P31]->(d:Entity {entityId:'Q1323642'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_002",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1151023 -> P27 -> Q43 -> P31 -> Q160016",
-    "gold_answer": "The United Nations member states (Q160016)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1151023'})-[:P27]->(c:Entity {entityId:'Q43'})-[:P31]->(d:Entity {entityId:'Q160016'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_003",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1151023 -> P27 -> Q43 -> P31 -> Q3624078",
-    "gold_answer": "In international law (Q3624078)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1151023'})-[:P27]->(c:Entity {entityId:'Q43'})-[:P31]->(d:Entity {entityId:'Q3624078'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_004",
-    "question_text": "What is the instance of of the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1151023 -> P31 -> Q5 -> P31 -> Q502895",
-    "gold_answer": "In biology (Q502895)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1151023'})-[:P31]->(c:Entity {entityId:'Q5'})-[:P31]->(d:Entity {entityId:'Q502895'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_005",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P27 -> Q142 -> P31 -> Q160016",
-    "gold_answer": "The United Nations member states (Q160016)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1255329'})-[:P27]->(c:Entity {entityId:'Q142'})-[:P31]->(d:Entity {entityId:'Q160016'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_006",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P27 -> Q142 -> P31 -> Q185441",
-    "gold_answer": "The European Union (Q185441)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1255329'})-[:P27]->(c:Entity {entityId:'Q142'})-[:P31]->(d:Entity {entityId:'Q185441'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_007",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P27 -> Q142 -> P31 -> Q3624078",
-    "gold_answer": "In international law (Q3624078)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1255329'})-[:P27]->(c:Entity {entityId:'Q142'})-[:P31]->(d:Entity {entityId:'Q3624078'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_008",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P27 -> Q142 -> P31 -> Q6505795",
-    "gold_answer": "The Council of Europe (Q6505795)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1255329'})-[:P27]->(c:Entity {entityId:'Q142'})-[:P31]->(d:Entity {entityId:'Q6505795'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_009",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P27 -> Q142 -> P31 -> Q6688521",
-    "gold_answer": "The permanent members of the United Nations Security Council (Q6688521)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1255329'})-[:P27]->(c:Entity {entityId:'Q142'})-[:P31]->(d:Entity {entityId:'Q6688521'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_010",
-    "question_text": "What is the instance of of the instance of of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P31 -> Q5 -> P31 -> Q502895",
-    "gold_answer": "In biology (Q502895)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1255329'})-[:P31]->(c:Entity {entityId:'Q5'})-[:P31]->(d:Entity {entityId:'Q502895'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_011",
-    "question_text": "What is the instance of of the place of birth of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P19 -> Q271659 -> P31 -> Q484170",
-    "gold_answer": "The commune (Q484170)",
-    "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q1255329'})-[:P19]->(c:Entity {entityId:'Q271659'})-[:P31]->(d:Entity {entityId:'Q484170'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
-    "is_verified": true
-  },
-  {
-    "question_id": "TR_3H_012",
     "question_text": "What is the located in the administrative territorial entity of the place of birth of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P19 -> Q271659 -> P131 -> Q12784",
     "gold_answer": "Val-d'Oise (Q12784)",
@@ -420,7 +310,7 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_3H_013",
+    "question_id": "TR_3H_002",
     "question_text": "What is the country of the place of birth of the cast member of The Cut?",
     "reasoning_path": "Q17512617 -> P161 -> Q1255329 -> P19 -> Q271659 -> P17 -> Q142",
     "gold_answer": "France (Q142)",
@@ -430,23 +320,133 @@
     "is_verified": true
   },
   {
-    "question_id": "TR_3H_014",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q19650463 -> P27 -> Q145 -> P31 -> Q112099",
-    "gold_answer": "An island country (Q112099)",
+    "question_id": "TR_3H_003",
+    "question_text": "What is the country of the place of birth of the cast member of The Cut?",
+    "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P19 -> Q1218 -> P17 -> Q12560",
+    "gold_answer": "The Ottoman Empire (Q12560)",
     "difficulty": "3-hop",
     "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q19650463'})-[:P27]->(c:Entity {entityId:'Q145'})-[:P31]->(d:Entity {entityId:'Q112099'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q284051'})-[:P19]->(c:Entity {entityId:'Q1218'})-[:P17]->(d:Entity {entityId:'Q12560'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_004",
+    "question_text": "What is the country of the place of birth of the cast member of The Cut?",
+    "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P19 -> Q1218 -> P17 -> Q193714",
+    "gold_answer": "Mandatory Palestine (Q193714)",
+    "difficulty": "3-hop",
+    "domain": "cinema",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q284051'})-[:P19]->(c:Entity {entityId:'Q1218'})-[:P17]->(d:Entity {entityId:'Q193714'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_005",
+    "question_text": "What is the country of the place of birth of the cast member of The Cut?",
+    "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P19 -> Q1218 -> P17 -> Q219060",
+    "gold_answer": "Palestine (Q219060)",
+    "difficulty": "3-hop",
+    "domain": "cinema",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q284051'})-[:P19]->(c:Entity {entityId:'Q1218'})-[:P17]->(d:Entity {entityId:'Q219060'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_006",
+    "question_text": "What is the country of the place of birth of the cast member of The Cut?",
+    "reasoning_path": "Q17512617 -> P161 -> Q284051 -> P19 -> Q1218 -> P17 -> Q801",
+    "gold_answer": "Israel (Q801)",
+    "difficulty": "3-hop",
+    "domain": "cinema",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q284051'})-[:P19]->(c:Entity {entityId:'Q1218'})-[:P17]->(d:Entity {entityId:'Q801'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_007",
+    "question_text": "What is the country of the home venue of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P115 -> Q1325035 -> P17 -> Q43",
+    "gold_answer": "Turkey (Q43)",
+    "difficulty": "3-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P115]->(c:Entity {entityId:'Q1325035'})-[:P17]->(d:Entity {entityId:'Q43'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_008",
+    "question_text": "What is the country of citizenship of the head coach of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P286 -> Q782660 -> P27 -> Q43",
+    "gold_answer": "Turkey (Q43)",
+    "difficulty": "3-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P286]->(c:Entity {entityId:'Q782660'})-[:P27]->(d:Entity {entityId:'Q43'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_009",
+    "question_text": "What is the located in the administrative territorial entity of the home venue of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P115 -> Q1325035 -> P131 -> Q174060",
+    "gold_answer": "Elazığ (Q174060)",
+    "difficulty": "3-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P115]->(c:Entity {entityId:'Q1325035'})-[:P131]->(d:Entity {entityId:'Q174060'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_010",
+    "question_text": "What is the country of citizenship of the head coach of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P286 -> Q782660 -> P27 -> Q183",
+    "gold_answer": "Germany (Q183)",
+    "difficulty": "3-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P286]->(c:Entity {entityId:'Q782660'})-[:P27]->(d:Entity {entityId:'Q183'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_011",
+    "question_text": "What is the member of sports team of the head coach of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P286 -> Q782660 -> P54 -> Q1369461",
+    "gold_answer": "Sakaryaspor Kulübü Derneği (Q1369461)",
+    "difficulty": "3-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P286]->(c:Entity {entityId:'Q782660'})-[:P54]->(d:Entity {entityId:'Q1369461'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_012",
+    "question_text": "What is the member of sports team of the head coach of the member of sports team of Richard Paul Franck Kingson?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 -> P286 -> Q782660 -> P54 -> Q1536956",
+    "gold_answer": "Keçiörengücü (Q1536956)",
+    "difficulty": "3-hop",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(b:Entity {entityId:'Q1127498'})-[:P286]->(c:Entity {entityId:'Q782660'})-[:P54]->(d:Entity {entityId:'Q1536956'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_013",
+    "question_text": "What is the country of the award received of the genre of Crossing the Bridge?",
+    "reasoning_path": "Q573156 -> P136 -> Q93204 -> P166 -> Q135498 -> P17 -> Q30",
+    "gold_answer": "The United States of America (Q30)",
+    "difficulty": "3-hop",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q573156'})-[:P136]->(b:Entity {entityId:'Q93204'})-[:P166]->(c:Entity {entityId:'Q135498'})-[:P17]->(d:Entity {entityId:'Q30'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "is_verified": true
+  },
+  {
+    "question_id": "TR_3H_014",
+    "question_text": "What is the located in the administrative territorial entity of the country of the record label of Emina Jahović?",
+    "reasoning_path": "Q233932 -> P264 -> Q4384116 -> P17 -> Q403 -> P131 -> Q37024",
+    "gold_answer": "Serbia and Montenegro (Q37024)",
+    "difficulty": "3-hop",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q233932'})-[:P264]->(b:Entity {entityId:'Q4384116'})-[:P17]->(c:Entity {entityId:'Q403'})-[:P131]->(d:Entity {entityId:'Q37024'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_3H_015",
-    "question_text": "What is the instance of of the country of citizenship of the cast member of The Cut?",
-    "reasoning_path": "Q17512617 -> P161 -> Q19650463 -> P27 -> Q145 -> P31 -> Q160016",
-    "gold_answer": "The United Nations member states (Q160016)",
+    "question_text": "What is the located in the administrative territorial entity of the country of the record label of Emina Jahović?",
+    "reasoning_path": "Q233932 -> P264 -> Q4384116 -> P17 -> Q403 -> P131 -> Q838261",
+    "gold_answer": "Q838261 (Q838261)",
     "difficulty": "3-hop",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(b:Entity {entityId:'Q19650463'})-[:P27]->(c:Entity {entityId:'Q145'})-[:P31]->(d:Entity {entityId:'Q160016'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q233932'})-[:P264]->(b:Entity {entityId:'Q4384116'})-[:P17]->(c:Entity {entityId:'Q403'})-[:P131]->(d:Entity {entityId:'Q838261'}) RETURN a.name AS a, b.name AS b, c.name AS c, d.name AS d LIMIT 1",
     "is_verified": true
   },
   {
@@ -471,32 +471,32 @@
   },
   {
     "question_id": "TR_CMP_003",
-    "question_text": "Do The Cut and Kokowääh share the same cast member?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1151023 <- P161 <- Q442941",
-    "gold_answer": "Yes; shared entity is Numan Acar (Q1151023).",
+    "question_text": "Do Richard Paul Franck Kingson and Roland Alberg share the same member of sports team?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 <- P54 <- Q2180890",
+    "gold_answer": "Yes; shared entity is Elazığspor (Q1127498).",
     "difficulty": "comparison",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(z:Entity {entityId:'Q1151023'})<-[:P161]-(x:Entity {entityId:'Q442941'}) RETURN a.name AS a, x.name AS x, z.name AS z LIMIT 1",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(z:Entity {entityId:'Q1127498'})<-[:P54]-(x:Entity {entityId:'Q2180890'}) RETURN a.name AS a, x.name AS x, z.name AS z LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_CMP_004",
-    "question_text": "Do The Cut and Kebab Connection share the same cast member?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1151023 <- P161 <- Q567579",
-    "gold_answer": "Yes; shared entity is Numan Acar (Q1151023).",
+    "question_text": "Do Richard Paul Franck Kingson and Bahadir Öztürk share the same member of sports team?",
+    "reasoning_path": "Q217097 -> P54 -> Q1127498 <- P54 <- Q22342693",
+    "gold_answer": "Yes; shared entity is Elazığspor (Q1127498).",
     "difficulty": "comparison",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(z:Entity {entityId:'Q1151023'})<-[:P161]-(x:Entity {entityId:'Q567579'}) RETURN a.name AS a, x.name AS x, z.name AS z LIMIT 1",
+    "domain": "football",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q217097'})-[:P54]->(z:Entity {entityId:'Q1127498'})<-[:P54]-(x:Entity {entityId:'Q22342693'}) RETURN a.name AS a, x.name AS x, z.name AS z LIMIT 1",
     "is_verified": true
   },
   {
     "question_id": "TR_CMP_005",
-    "question_text": "Do The Cut and For a Moment Freedom share the same cast member?",
-    "reasoning_path": "Q17512617 -> P161 -> Q1151023 <- P161 <- Q672402",
-    "gold_answer": "Yes; shared entity is Numan Acar (Q1151023).",
+    "question_text": "Do The Cut and At Play in the Fields of the Lord share the same genre?",
+    "reasoning_path": "Q17512617 -> P136 -> Q130232 <- P136 <- Q1754287",
+    "gold_answer": "Yes; shared entity is In film and television (Q130232).",
     "difficulty": "comparison",
-    "domain": "cinema",
-    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P161]->(z:Entity {entityId:'Q1151023'})<-[:P161]-(x:Entity {entityId:'Q672402'}) RETURN a.name AS a, x.name AS x, z.name AS z LIMIT 1",
+    "domain": "music",
+    "verification_cypher": "MATCH (a:Entity {entityId:'Q17512617'})-[:P136]->(z:Entity {entityId:'Q130232'})<-[:P136]-(x:Entity {entityId:'Q1754287'}) RETURN a.name AS a, x.name AS x, z.name AS z LIMIT 1",
     "is_verified": true
   }
 ]
